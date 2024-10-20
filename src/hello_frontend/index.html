@@ -1,17 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>IC Hello Starter</title>
-  <base href="/" />
-  <link rel="icon" href="/favicon.ico" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Phones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+    <h1>New Phones</h1>
+    <ul id="phone-list">
+        <!-- Phone items will be inserted here -->
+    </ul>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const phones = [
+                { id: 1, name: 'S22+ ', brand: 'Samsung' },
+                { id: 2, name: '16', brand: 'Apple' },
+                { id: 3, name: '16r', brand: 'Oneplus' },
+                { id: 4, name: 'note pro', brand: 'Redmi' },
+                { id: 5, name: 'phone 2', brand: 'Nothing' },
+                { id: 6, name: 'c22', brand: 'Realme' },
+                { id: 7, name: 's24 ultra', brand: 'Samsung' },
+                { id: 8, name: 'node2', brand: 'Oneplus' },
+                { id: 9, name: '16pro', brand: 'Apple' },
+                { id: 10, name: 'Phone 10', brand: 'Saarthak' },
+            ];
+
+            const phoneList = document.getElementById('phone-list');
+
+            phones.forEach(phone => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${phone.name} - ${phone.brand}`;
+                phoneList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
 </html>
